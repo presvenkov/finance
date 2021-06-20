@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add cash
+{% endblock %}
+
+{% block main %}
+    <form action="/topup" method="post">
+        <div class="form-group">
+            <input class="form-control" type="number" name="amount" placeholder="Amount" min=0>
+        </div>
+        <div>
+            <button class="btn btn-primary">Add cash</button>
+        </div>
+    </form>
+{% endblock %}

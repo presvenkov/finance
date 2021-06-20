@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+
+{% block main %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Current price</th>
+                <th>Total owned</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{row['name']}}</td>
+                <td>{{row['symbol']}}</td>
+                <td>{{row['amtOwned']}}</td>
+                <td>{{row['currentPrice']}}</td>
+                <td>{{row['totalForThis']|usd}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div>
+        Portfolio value {{total}}
+    </div>
+
+{% endblock %}
